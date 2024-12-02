@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 09:07 AM
+-- Generation Time: Dec 02, 2024 at 10:52 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,27 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `currency`
---
-
-CREATE TABLE `currency` (
-  `CurrencyID` int(11) NOT NULL,
-  `Code` varchar(3) NOT NULL,
-  `Country` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `gold_price`
 --
 
 CREATE TABLE `gold_price` (
   `PriceID` int(11) NOT NULL,
   `Price` float NOT NULL,
-  `DateTime` datetime NOT NULL,
-  `Change_%` float NOT NULL,
-  `Currency` int(11) NOT NULL
+  `Date` date NOT NULL,
+  `Time` time NOT NULL,
+  `PriceChange(%)` float NOT NULL,
+  `Currency` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -52,43 +41,22 @@ CREATE TABLE `gold_price` (
 --
 
 --
--- Indexes for table `currency`
---
-ALTER TABLE `currency`
-  ADD PRIMARY KEY (`CurrencyID`);
-
---
 -- Indexes for table `gold_price`
 --
 ALTER TABLE `gold_price`
   ADD PRIMARY KEY (`PriceID`),
-  ADD KEY `Currency` (`Currency`);
+  ADD KEY `Currency_2` (`Currency`),
+  ADD KEY `Currency_3` (`Currency`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `currency`
---
-ALTER TABLE `currency`
-  MODIFY `CurrencyID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `gold_price`
 --
 ALTER TABLE `gold_price`
-  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `gold_price`
---
-ALTER TABLE `gold_price`
-  ADD CONSTRAINT `gold_price_ibfk_1` FOREIGN KEY (`Currency`) REFERENCES `currency` (`CurrencyID`);
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
