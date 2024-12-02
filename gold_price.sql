@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 10:52 AM
+-- Generation Time: Dec 02, 2024 at 10:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gold_price`
+-- Database: `nhihi`
 --
 
 -- --------------------------------------------------------
@@ -44,9 +44,7 @@ CREATE TABLE `gold_price` (
 -- Indexes for table `gold_price`
 --
 ALTER TABLE `gold_price`
-  ADD PRIMARY KEY (`PriceID`),
-  ADD KEY `Currency_2` (`Currency`),
-  ADD KEY `Currency_3` (`Currency`);
+  ADD PRIMARY KEY (`PriceID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
