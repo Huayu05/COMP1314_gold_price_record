@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2024 at 08:12 AM
+-- Generation Time: Dec 03, 2024 at 08:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -208,9 +208,87 @@ CREATE TABLE `zar_price` (
 --
 
 --
+-- Indexes for table `aud_price`
+--
+ALTER TABLE `aud_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `brl_price`
+--
+ALTER TABLE `brl_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `cad_price`
+--
+ALTER TABLE `cad_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `chf_price`
+--
+ALTER TABLE `chf_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `cny_price`
+--
+ALTER TABLE `cny_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `eur_price`
+--
+ALTER TABLE `eur_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `gbp_price`
+--
+ALTER TABLE `gbp_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `hkd_price`
+--
+ALTER TABLE `hkd_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `inr_price`
+--
+ALTER TABLE `inr_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `jpy_price`
+--
+ALTER TABLE `jpy_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `mxn_price`
+--
+ALTER TABLE `mxn_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `rub_price`
+--
+ALTER TABLE `rub_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
 -- Indexes for table `usd_price`
 --
 ALTER TABLE `usd_price`
+  ADD PRIMARY KEY (`PriceID`);
+
+--
+-- Indexes for table `zar_price`
+--
+ALTER TABLE `zar_price`
   ADD PRIMARY KEY (`PriceID`);
 
 --
@@ -218,10 +296,88 @@ ALTER TABLE `usd_price`
 --
 
 --
+-- AUTO_INCREMENT for table `aud_price`
+--
+ALTER TABLE `aud_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `brl_price`
+--
+ALTER TABLE `brl_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cad_price`
+--
+ALTER TABLE `cad_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `chf_price`
+--
+ALTER TABLE `chf_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cny_price`
+--
+ALTER TABLE `cny_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `eur_price`
+--
+ALTER TABLE `eur_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gbp_price`
+--
+ALTER TABLE `gbp_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `hkd_price`
+--
+ALTER TABLE `hkd_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `inr_price`
+--
+ALTER TABLE `inr_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `jpy_price`
+--
+ALTER TABLE `jpy_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mxn_price`
+--
+ALTER TABLE `mxn_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rub_price`
+--
+ALTER TABLE `rub_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `usd_price`
 --
 ALTER TABLE `usd_price`
   MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `zar_price`
+--
+ALTER TABLE `zar_price`
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
