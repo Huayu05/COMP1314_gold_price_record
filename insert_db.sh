@@ -24,8 +24,10 @@ currency="USD AUD CAD EUR GBP JPY CHF CNY HKD BRL INR MXN RUB ZAR"
 #Loop through all currency to insert data
 for i in $currency;
 do
+	#If is USD, no need to find exchange rate since the base price comes with USD
 	if [ "$i" != "USD" ];
 	then
+		#Curl the exchange rate in the website
 		exchange_rate=$(echo "$rawdata" |
 	       		awk -F"$i" '{print $2}' |
 	       		awk -F'"bid":' '{print $2}' |
@@ -35,12 +37,15 @@ do
 	else
 		exchange_rate="1.00"
 	fi
-
+	
+	#The price exchange here and set to 2 decimal point
 	new_price=$(echo "$base_price * $exchange_rate" | bc)
         new_price=$(printf "%.2f" "$new_price")
 	echo -e "$date $hour  ->  $new_price\t$i\t$exchange_rate"
 
-	
+	#Lowercase the currency to avoid mysql case sensitive
 	i=$(echo "$i" | tr '[:upper:]' '[:lower:]')
+
+	#Insert data into the database table
 	sudo mysql -u root -e "insert into gold_price.\`${i}_price\` (Price, Date, Time) values ($new_price, '$date', '$hour')"
 done
