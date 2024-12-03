@@ -371,7 +371,7 @@ ALTER TABLE `rub_price`
 -- AUTO_INCREMENT for table `usd_price`
 --
 ALTER TABLE `usd_price`
-  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `PriceID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `zar_price`

@@ -40,5 +40,7 @@ do
         new_price=$(printf "%.2f" "$new_price")
 	echo -e "$date $hour  ->  $new_price\t$i\t$exchange_rate"
 
-	sudo mysql -u root -e "insert into gold_price.gold_price (Price, Date, Time, \`PriceChange(%)\`, Currency) values ($new_price, '$date', '$hour', 0, '$i')"
+	
+	i=$(echo "$i" | tr '[:upper:]' '[:lower:]')
+	sudo mysql -u root -e "insert into gold_price.\`${i}_price\` (Price, Date, Time) values ($new_price, '$date', '$hour')"
 done
