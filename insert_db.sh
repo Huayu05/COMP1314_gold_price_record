@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Curl get data from the website
-rawdata=$(curl -s https://www.kitco.com/charts/gold)
+# Check website availability
+#fetch only the header and halt the program when error is encountered
+if curl --head --silent --fail https://www.kitco.com/charts/gold > /dev/null; then
+	# Curl get data from the website
+	rawdata=$(curl -s https://www.kitco.com/charts/gold)
+else
+	echo "Website is not reachable at the moment"
+	exit
+fi
 
 # First awk seperating data by its unique class and print text after it
 # Second awk seperate from the next ">" and print text after it which start from the price
