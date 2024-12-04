@@ -1,7 +1,5 @@
-Progression:
-1. Fetching data (done) (only gold price) 
-2. Database creation
-3. Database normalization
-4. Insert data to database
-5. Run automatically
-6. Show graph
+Required Execution:
+1. sudo ./set_contrab.sh - Configure setting for cronjob
+2. Import gold_price.sql into database server
+3. ./insert_db.sh to manually insert gold price informations
+
