@@ -19,7 +19,7 @@ else
 fi
 
 #filter the data, the data will be within the specified date and hour
-awk -v end_date="$end_date" -v end_hour="$end_hour" -v start_date="$start_date" -v start_hour="$start_hour" '(($1 != end_date || $3 <= end_hour) && ($1 != start_date || $3 >= start_hour)){print $1 " " $3, $2}' graph_data.dat > tmp.dat && mv tmp.dat graph_data.dat
+awk -v end_date="$end_date" -v end_hour="$end_hour" -v start_date="$start_date" -v start_hour="$start_hour" '(($1 != end_date || $3 <= end_hour) && ($1 != start_date || $3 >= start_hour)){print $1 " " $3, $2}' price_data.dat > tmp.dat && mv tmp.dat price_data.dat
 
 #graph configuration. Graph is created as graph.png
 #increment setting, format axis in time, specified range, specified x and y elements, graph labels, title and size
@@ -27,7 +27,7 @@ gnuplot <<EOF
 set rmargin 5
 set terminal png font 'Times new roman'
 set terminal png size 1200,800
-set output 'graph.png'
+set output 'price_graph.png'
 set xlabel 'Date'
 set ylabel 'Price (${currency})'
 set xdata time 
