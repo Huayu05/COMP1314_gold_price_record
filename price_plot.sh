@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
 	echo "sql query error"
 	exit 1
 else
-	echo "$graph_data" | sed '1d' > graph_data.dat
+	echo "$graph_data" | sed '1d' > price_data.dat
 fi
 
 #filter the data, the data will be within the specified date and hour
@@ -34,6 +34,6 @@ set xdata time
 set timefmt "%Y-%m-%d %H:%M:%S"
 set format x "%Y-%m-%d\n%H:%M:%S"	
 set title "Gold Price Chart"
-plot "graph_data.dat" u 1:3 w l t 'price ($currency)'
+plot "price_data.dat" u 1:3 w l t 'price ($currency)'
 EOF
 
