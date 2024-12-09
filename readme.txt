@@ -4,6 +4,9 @@ Required Execution:
 
 Execution method
 1. ./insert_db.sh to manually insert gold price information
-2. Plot graph using the following script + arguments: ./gnu_plot.sh startdate enddate starttime endtime currency
+2. Plot gold price graph using the following script: ./gnu_plot.sh "start_date" "end_date" "start_time" "endtime "currency"
+3. Plot exchange rate graph using the following script: ./exrate_plot.sh "start_date" "end_date"
 
+Note: Date format "Year-Month-Day"
+      Time format "Hour:Minute:Second"
 

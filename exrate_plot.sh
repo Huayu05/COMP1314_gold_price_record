@@ -9,7 +9,7 @@ sudo mysql -u root gold_price -e "SELECT CONCAT(Date, ':', Time) AS date_time FR
 #normalize the exchange rate based on the first row of data, data will present as percentage according to the baseline
 #for each currency, the exchange rate will be pasted into a column parallel with date
 for i in $currency; do
-	baseline_rate=$(sudo mysql -u root gold_price -e "SELECT ${i}.Price / usd.Price FROM ${i}_price ${i}, usd_price usd WHERE usd.Date = '$start_date'  AND usd.Time = ${i}.Time ORDER BY usd.Time ASC LIMIT 1")
+	baseline_rate=$(sudo mysql -u root gold_price -e "SELECT ${i}.Price / usd.Price FROM ${i}_price ${i}, usd_price usd WHERE (usd.Date = ${i}.Date) AND (usd.Date BETWEEN '${start_date}' AND '${end_date}') AND (usd.Time = ${i}.Time) ORDER BY usd.Date, usd.Time ASC LIMIT 1")
 	baseline_rate=$(echo $baseline_rate | awk '{print $4}') 
 
 	ex_rate=$(sudo mysql -u root gold_price -e "SELECT ((${i}.Price / usd.Price) / $baseline_rate)*100 FROM usd_price usd, ${i}_price ${i} WHERE usd.Date = ${i}.Date AND usd.Time = ${i}.Time AND usd.Date BETWEEN '${start_date}' AND '${end_date}'")
@@ -20,6 +20,7 @@ sed -i '1d' exchange_rate.dat
 
 #graph configuration
 gnuplot <<EOF
+set rmargin 5
 set key font "Arial, 10"
 set datafile separator ' '
 set terminal png font 'Times new roman'
