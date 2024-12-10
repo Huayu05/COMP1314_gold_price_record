@@ -4,7 +4,7 @@
 path=$(readlink -f .)
 
 #Initialize the task needed to add
-TASK="0 * * * * $path/insert_db.sh"
+TASK="*/10 * * * * $path/insert_db.sh"
 
 #Find the same task exist or not, if exist return 0 and ended
 (crontab -l | grep -Fxq "$TASK") || {

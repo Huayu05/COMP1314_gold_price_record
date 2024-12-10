@@ -24,10 +24,10 @@ set rmargin 5
 set key font "Arial, 10"
 set datafile separator ' '
 set terminal png font 'Times new roman'
-set terminal png size 1500,1000
+set terminal png size 1350,850
 set output 'exrate_graph.png'
 set xlabel 'Date'
-set ylabel 'Exchange Rate (Based on USD)'
+set ylabel 'Normalized Exchange Rate Based on USD (%)'
 set xdata time
 set timefmt "%Y-%m-%d:%H:%M:%S"
 set format x "%Y-%m-%d\n%H:%M:%S"
