@@ -1,13 +1,11 @@
-Required Execution:
-1. sudo ./setup.sh - Configure setting for cronjob and database initialize
-2. Import gold_price.sql into database server
-3. sudo ./create_database.sh - Create the pre configured gold_price database
+Required execution: run "sudo ./setup.sh" to configure cronjob settings and initialize the gold price database
 
 Execution method
 1. ./insert_db.sh to manually insert gold price information
 2. Plot gold price graph using the following script: ./gnu_plot.sh "start_date" "end_date" "start_time" "endtime "currency"
 3. Plot exchange rate graph using the following script: ./exrate_plot.sh "start_date" "end_date"
 
-Note: Date format "Year-Month-Day"
-      Time format "Hour:Minute:Second"
-
+General Notes: 
+Date format "Year-Month-Day"
+Time format "Hour:Minute:Second"
+Cronjob is configured to fetch data every 10 minutes
