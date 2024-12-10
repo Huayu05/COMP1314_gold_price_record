@@ -1,5 +1,5 @@
 Required Execution:
-1. sudo ./set_contrab.sh - Configure setting for cronjob
+1. sudo ./setup.sh - Configure setting for cronjob and database initialize
 2. Import gold_price.sql into database server
 3. sudo ./create_database.sh - Create the pre configured gold_price database
 
