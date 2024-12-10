@@ -1,0 +1,28 @@
+#!/bin/bash
+sudo mysql -u root -e "CREATE database gold_price"
+
+#Check if database already exist
+if [ $? -ne 0 ]; then
+        echo "database already exist"
+        exit 1
+fi
+
+#Creates database
+sudo mysql -u root gold_price < gold_price.sql
+
+#redirect the output to the path based on different user
+path=$(readlink -f .)
+
+#Initialize the task needed to add
+TASK="*/10 * * * * $path/insert_db.sh"
+
+#Find the same task exist or not, if exist return 0 and ended
+(crontab -l | grep -Fxq "$TASK") || {
+
+        #Write the task in it and throw the error to "black hole"
+        (crontab -l 2>/dev/null; echo "$TASK") |
+        crontab -
+
+        #Success message
+        echo "Cron job added: $TASK"
+}
