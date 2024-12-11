@@ -31,8 +31,9 @@ set ylabel 'Normalized Exchange Rate Based on USD (%)'
 set xdata time
 set timefmt "%Y-%m-%d:%H:%M:%S"
 set format x "%Y-%m-%d\n%H:%M:%S"
+set grid
 set title "Exchange Rate Chart"
-plot "exchange_rate.dat" u 1:2 w l t 'AUD', "exchange_rate.dat" u 1:3 w l t 'CAD',  "exchange_rate.dat" u 1:4 w l t 'EUR',  "exchange_rate.dat" u 1:5 w l t 'GBP',  "exchange_rate.dat" u 1:6 w l t 'JPY',  "exchange_rate.dat" u 1:7 w l t 'CHF',  "exchange_rate.dat" u 1:8 w l t 'CNY',  "exchange_rate.dat" u 1:9 w l t 'HKD',  "exchange_rate.dat" u 1:10 w l t 'BRL',  "exchange_rate.dat" u 1:11 w l t 'INR',  "exchange_rate.dat" u 1:12 w l t 'MXN',  "exchange_rate.dat" u 1:13 w l t 'RUB',  "exchange_rate.dat" u 1:14 w l t 'ZAR'
+plot "exchange_rate.dat" u 1:2 w linespoints t 'AUD', "exchange_rate.dat" u 1:3 w l t 'CAD',  "exchange_rate.dat" u 1:4 w l t 'EUR',  "exchange_rate.dat" u 1:5 w l t 'GBP',  "exchange_rate.dat" u 1:6 w l t 'JPY',  "exchange_rate.dat" u 1:7 w l t 'CHF',  "exchange_rate.dat" u 1:8 w l t 'CNY',  "exchange_rate.dat" u 1:9 w l t 'HKD',  "exchange_rate.dat" u 1:10 w l t 'BRL',  "exchange_rate.dat" u 1:11 w l t 'INR',  "exchange_rate.dat" u 1:12 w l t 'MXN',  "exchange_rate.dat" u 1:13 w l t 'RUB',  "exchange_rate.dat" u 1:14 w l t 'ZAR'
 EOF
 
 

@@ -6,6 +6,8 @@ Execution method
 3. Plot exchange rate graph using the following script: ./exrate_plot.sh "start_date" "end_date"
 
 General Notes: 
-Date format "Year-Month-Day"
-Time format "Hour:Minute:Second"
-Cronjob is configured to fetch data every 10 minutes
+1. Date format "Year-Month-Day"
+2. Time format "Hour:Minute:Second"
+3. Cronjob is configured to fetch data every 10 minutes
+4. Gold price graph - price_graph.png
+5. Exchange rate graph - exrate_graph.png

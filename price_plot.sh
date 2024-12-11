@@ -30,10 +30,12 @@ set terminal png size 1200,800
 set output 'price_graph.png'
 set xlabel 'Date'
 set ylabel 'Price (${currency})'
+set grid
 set xdata time 
 set timefmt "%Y-%m-%d %H:%M:%S"
+#set xrange ["$start_date $start_hour":"$end_date $end_hour"]
 set format x "%Y-%m-%d\n%H:%M:%S"	
 set title "Gold Price Chart"
-plot "price_data.dat" u 1:3 w l t 'price ($currency)'
+plot "price_data.dat" u 1:3 w linespoints t 'price ($currency)'
 EOF
 
