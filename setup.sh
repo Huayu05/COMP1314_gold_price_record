@@ -4,11 +4,10 @@ sudo mysql -u root -e "CREATE database gold_price"
 #Check if database already exist
 if [ $? -ne 0 ]; then
         echo "database already exist"
-        exit 1
+else
+	#Creates database
+	sudo mysql -u root gold_price < gold_price.sql
 fi
-
-#Creates database
-sudo mysql -u root gold_price < gold_price.sql
 
 #redirect the output to the path based on different user
 path=$(readlink -f .)
